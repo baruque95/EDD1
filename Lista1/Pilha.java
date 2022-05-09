@@ -19,7 +19,7 @@ public class Pilha{
 
     public void push(char elemento){
         if(!this.cheia()){
-            vetor[topo++] = elemento;
+            vetor[++topo] = elemento;
         } else {
             System.out.println("Pilha cheia: push não funcionou.");
         }
