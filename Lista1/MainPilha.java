@@ -18,12 +18,15 @@ public class MainPilha {
             i++;
         }
 
+        isMirrored(s);
+
         scanner.close();
     }
 
-    public boolean isMirrored(String s, char c){
+    public static boolean isMirrored(String s){
 
         int i = 0;
+        char c;
         int tam = s.length();
         Pilha pilhaAux2 = new Pilha(tam);
         Pilha pilhaAux3 = new Pilha(tam);
@@ -42,9 +45,12 @@ public class MainPilha {
             i++;
         }
 
+        
+        /*
         if(isValid(pilhaAux2, s) && isValid(pilhaAux3, s)){
 
         }
+        */
         return true;
     }
 
