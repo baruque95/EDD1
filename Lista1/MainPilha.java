@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class MainPilha {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Pilha pilha = new Pilha(40);
         String s;
@@ -12,57 +12,68 @@ public class MainPilha {
 
         int i = 0;
 
-        while(i < s.length()){
+        while (i < s.length()) {
             c = s.charAt(i);
             pilha.push(c);
             i++;
         }
 
+        isValid(pilha, s);
         isMirrored(s);
 
         scanner.close();
     }
 
-    public static boolean isMirrored(String s){
+    public static boolean isMirrored(String s) {
 
-        int i = 0;
-        char c;
         int tam = s.length();
         Pilha pilhaAux2 = new Pilha(tam);
         Pilha pilhaAux3 = new Pilha(tam);
 
-        while(i < s.length()/2){
-            c = s.charAt(i);
-            pilhaAux2.push(c);
-            i++;
+        for (int i = 0; i < tam / 2; i++) {
+            int j = tam - i - 1;
+            if (s.charAt(i) != 'c' && s.charAt(j) != 'c') {
+                pilhaAux2.push(s.charAt(i));
+                pilhaAux3.push(s.charAt(j));
+            } else {
+                System.out.println("A pilha possui caracteres inválidos.");
+                return false;
+            }
         }
 
-        i = 0;
+        for (int i = 0; i < s.length(); i++) {
+            char charPilha2 = pilhaAux2.pop();
+            char charPilha3 = pilhaAux3.pop();
 
-        while(i >= s.length()/2 && i < s.length()){
-            c = s.charAt(i);
-            pilhaAux3.push(c);
-            i++;
+            if (charPilha2 != charPilha3)
+                return false;
+
+            System.out.println("A cadeia de caracteres obedece aos parâmetros exigidos.");
+            return true;
         }
 
-        
-        /*
-        if(isValid(pilhaAux2, s) && isValid(pilhaAux3, s)){
-
-        }
-        */
         return true;
     }
 
-    public boolean isValid(Pilha p, String s){
+    public static boolean isValid(Pilha p, String s) {
         int i = 0;
-        while(i < s.length()){
-            if(s.charAt(i) != 'a' && s.charAt(i) != 'b' && s.charAt(i) != 'c'){
+        int stringLenght = s.length();
+        char middleChar = s.charAt((stringLenght / 2));
+
+        if (stringLenght % 2 == 0 || middleChar != 'c') {
+            System.out.println("A frase é inválida.");
+            return false;
+        }
+
+        while (i < stringLenght) {
+
+            if (s.charAt(i) != 'a' && s.charAt(i) != 'b' && s.charAt(i) != 'c') {
+                System.out.println("A frase possui caractere inválido.");
                 return false;
             }
             i++;
         }
+
         return true;
     }
 }
-
