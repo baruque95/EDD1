@@ -7,7 +7,7 @@ public class MainPilha {
         String s;
         char c;
 
-        System.out.println("Digite uma combinação de letras minúsculas.");
+        System.out.println("Digite uma combinação de letras.");
         s = scanner.nextLine();
         s.toLowerCase();
 
