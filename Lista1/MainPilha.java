@@ -47,6 +47,9 @@ public class MainPilha {
 }
 
 /*
+ * 
+ * RACIOCÍNIOS ANTERIORES QUE NÃO FORAM UTILIZADOS
+ * 
  * public static boolean isMirrored(String s) {
  * 
  * int stringLenght = s.length();
