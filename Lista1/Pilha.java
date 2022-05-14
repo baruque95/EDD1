@@ -14,7 +14,7 @@ public class Pilha {
     }
 
     public boolean vazia() {
-        return topo != -1;
+        return topo == -1;
     }
 
     public void push(char elemento) {
