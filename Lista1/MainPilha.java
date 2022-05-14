@@ -9,6 +9,7 @@ public class MainPilha {
 
         System.out.println("Digite uma combinação de letras minúsculas.");
         s = scanner.nextLine();
+        s.toLowerCase();
 
         int i = 0;
 
