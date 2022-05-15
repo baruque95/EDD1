@@ -67,3 +67,5 @@ public class Ex2 {
         return ciclo = 0;
     }
 }
+
+// Não consegui terminar a lógica! Programa não funcionando
