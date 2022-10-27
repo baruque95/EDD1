@@ -5,7 +5,6 @@ public class Ex2 {
         Scanner scanner = new Scanner(System.in);
         Pilha pilha = new Pilha(40);
         String s;
-        char c;
 
         System.out.println("Digite uma combinação de letras.");
         s = scanner.nextLine();
@@ -14,8 +13,7 @@ public class Ex2 {
         int i = 0;
 
         while (i < s.length()) {
-            c = s.charAt(i);
-            pilha.push(c);
+            pilha.push(s.charAt(i));
             i++;
         }
 
