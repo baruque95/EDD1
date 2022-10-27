@@ -34,6 +34,8 @@ public class Ex2 {
                 } else if (i == tam / 2 && c != 'c') {
                     System.out.println("Falhou... O caractere central não é c.");
                     return false;
+                } else if (s.charAt(i + 1) != 'd' && i != tam){
+
                 }
             } else {
                 System.out.println("Falhou... A cadeia de caracteres não é um palíndromo.");
